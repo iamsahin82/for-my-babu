@@ -135,17 +135,24 @@
         noBtn.style.top = y + "px";
     }
 
-    // Desktop
+    // Desktop hover
     noBtn.addEventListener("mouseover", moveButton);
 
-    // Mobile
+    // Mobile touch
     noBtn.addEventListener("touchstart", function(e) {
         e.preventDefault();
         moveButton();
     });
 
+    // YES single click → show surprise + hide NO
     yesBtn.addEventListener("click", function() {
         surprise.style.display = "block";
+        noBtn.style.display = "none";
+    });
+
+    // YES double click → refresh page
+    yesBtn.addEventListener("dblclick", function() {
+        location.reload();
     });
 </script>
 
